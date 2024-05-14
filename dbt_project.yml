@@ -35,9 +35,11 @@ clean-targets: # directories to be removed by `dbt clean`
 
 models:
   analytics:
+    +materialized: view
     # Applies to all files under models/example/
     src:
-      +materialized: view
+      +materialized: ephemeral
     dim:
       +materialized: table
+
 
